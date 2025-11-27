@@ -5,43 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabi Fries Catering Inquiry</title>
     <link rel="stylesheet" href="gabiprays-style.css">
-    <script>
-// Save the form data to Firebase
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    let name = document.getElementById("name").value;
-    let location = document.getElementById("location").value;
-    let type = document.getElementById("type").value;
-
-    // Save to Firebase
-    database.ref("inquiries").push({
-        name: name,
-        location: location,
-        type: type,
-        date: new Date().toLocaleString()
-    });
-
-    // Animation + reset form
-    btnText.style.display = 'none';
-    truckAnim.style.display = 'inline-block';
-    truckAnim.animate([
-        { left: '-80px' },
-        { left: '120px' }
-    ], {
-        duration: 2200,
-        fill: 'forwards',
-        easing: 'cubic-bezier(.68,-0.55,.27,1.55)'
-    });
-
-    setTimeout(() => {
-        truckAnim.style.display = 'none';
-        btnText.style.display = 'inline';
-        form.reset();
-        alert("Your inquiry has been submitted!");
-    }, 2400);
-});
-</script>
+    <link rel="icon" href="logozz.png" type="image/png">
 
     <style>
         .inquiry-form {
@@ -83,6 +47,8 @@ form.addEventListener("submit", function (e) {
             margin-top: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.12);
             transition: 0.2s;
+            position: relative;
+            overflow: hidden;
         }
         .inquiry-form button:hover {
             background: #2d0036;
@@ -90,10 +56,12 @@ form.addEventListener("submit", function (e) {
         }
     </style>
 </head>
+
 <body>
+
     <header class="pc-header">
         <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-            <a class="logo" href="index.html" >
+            <a class="logo" href="GABIPRAYS.HTML">
                 <img src="logozz.png" alt="logo">
                 <div>
                     <div class="site-title">GABI FRIES INQUIRY</div>
@@ -101,23 +69,27 @@ form.addEventListener("submit", function (e) {
                 </div>
             </a>
             <nav>
-                <a href="index.html" >Home</a>
-                <a href="menu.html" >Menu</a>
+                <a href="GABIPRAYS.HTML">Home</a>
+                <a href="menu.html">Menu</a>
                 <a href="catering-inquiry.html">Catering</a>
-                <a href="ABOUT US.html" >About us</a>
-                
+                <a href="ABOUT US.html">About us</a>
             </nav>
         </div>
     </header>
-     
+
+    
+    <!-- INQUIRY FORM -->
     <form class="inquiry-form" id="catering-inquiry">
         <h2>Catering Inquiry</h2>
+
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" required>
+
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required>
+        <input type="text" id="location" required>
+
         <label for="type">Type of Catering:</label>
-        <select id="type" name="type" required>
+        <select id="type" required>
             <option value="">Choose here</option>
             <option value="Birthday Party">Birthday Party</option>
             <option value="Corporate Event">Corporate Event</option>
@@ -125,8 +97,10 @@ form.addEventListener("submit", function (e) {
             <option value="Family Reunion">Family Reunion</option>
             <option value="Other">Other</option>
         </select>
-        <button type="submit" id="submitBtn" style="position:relative;overflow:hidden;">
+
+        <button type="submit" id="submitBtn">
             <span id="btnText">Submit Inquiry</span>
+
             <span id="truckAnim" style="display:none;position:absolute;left:-80px;top:50%;transform:translateY(-50%);">
                 <svg width="70" height="35" viewBox="0 0 70 35">
                     <rect x="3" y="12" width="42" height="18" rx="6" fill="#ff9100" stroke="#2d0036" stroke-width="2"/>
@@ -137,60 +111,71 @@ form.addEventListener("submit", function (e) {
             </span>
         </button>
     </form>
-    <script>
-    const form = document.querySelector('.inquiry-form');
-    const btn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const truckAnim = document.getElementById('truckAnim');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        btnText.style.display = 'none';
-        truckAnim.style.display = 'inline-block';
-        truckAnim.animate([
-            { left: '-80px' },
-            { left: '120px' }
-        ], {
-            duration: 2200,
-            fill: 'forwards',
-            easing: 'cubic-bezier(.68,-0.55,.27,1.55)'
-        });
-        setTimeout(() => {
-            truckAnim.style.display = 'none';
-            btnText.style.display = 'inline';
-            form.reset();
-        }, 2400);
-    });
 
-    
-    </script>
-     <footer class="pc-footer">
+
+    <footer class="pc-footer">
         <div class="container">
             <p>&copy; Gabi Fries 2025 — All rights reserved.</p>
         </div>
     </footer>
-    <script>  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCGRBBmrCDfuHhdZadfQ66EEtjwDVseClY",
-    authDomain: "gabiprays-cd488.firebaseapp.com",
-    projectId: "gabiprays-cd488",
-    storageBucket: "gabiprays-cd488.firebasestorage.app",
-    messagingSenderId: "84943903046",
-    appId: "1:84943903046:web:cb1a349103d795a4a9ad47",
-    measurementId: "G-P2QFP1XXPH"
-  };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  </script>
+    <!-- ✅ FIXED FIREBASE + JS -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCGRBBmrCDfuHhdZadfQ66EEtjwDVseClY",
+            authDomain: "gabiprays-cd488.firebaseapp.com",
+            projectId: "gabiprays-cd488",
+            storageBucket: "gabiprays-cd488.firebasestorage.app",
+            messagingSenderId: "84943903046",
+            appId: "1:84943903046:web:cb1a349103d795a4a9ad47",
+            measurementId: "G-P2QFP1XXPH",
+            databaseURL: "https://gabiprays-cd488-default-rtdb.firebaseio.com/"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const form = document.getElementById("catering-inquiry");
+        const btnText = document.getElementById("btnText");
+        const truckAnim = document.getElementById("truckAnim");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let location = document.getElementById("location").value;
+            let type = document.getElementById("type").value;
+
+            // 📌 Save to Realtime DB
+            await push(ref(db, "inquiries"), {
+                name: name,
+                location: location,
+                type: type,
+                date: new Date().toLocaleString()
+            });
+
+            // Animation
+            btnText.style.display = 'none';
+            truckAnim.style.display = 'inline-block';
+
+            truckAnim.animate([{ left: "-80px" }, { left: "120px" }], {
+                duration: 2200,
+                fill: "forwards",
+                easing: "cubic-bezier(.68,-0.55,.27,1.55)"
+            });
+
+            setTimeout(() => {
+                truckAnim.style.display = "none";
+                btnText.style.display = "inline";
+                form.reset();
+                alert("Your inquiry has been submitted!");
+            }, 2400);
+        });
+    </script>
+
 </body>
 </html>
-
-
