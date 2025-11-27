@@ -6,111 +6,141 @@
     <title>Gabi Fries — Menu</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="gabiprays-style.css">
+    <link rel="icon" href="logozz.png" type="image/png">
+
     <style>
+        body {font-family: Poppins, sans-serif;}
+
         .menu-details{max-width:1000px;margin:28px auto;padding:0 16px}
         .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
         .menu-card{background:#fff;border-radius:14px;padding:16px;box-shadow:0 8px 30px rgba(46,26,59,0.06)}
-        .price{font-weight:700;color:var(--purple-600);margin-top:8px}
+        .price{font-weight:700;color:#7a3ea1;margin-top:8px}
+
+        /* ORANGE SIZE BUTTONS */
+        .size-btn {
+            background:#ffa94d;
+            padding:10px 14px;
+            border-radius:10px;
+            font-weight:600;
+            transition:0.25s;
+            cursor:pointer;
+        }
+        .size-btn:hover {
+            background:white;
+            box-shadow:0 0 0 2px #ffa94d inset;
+        }
+
+        /* BOOK CATERING BUTTON */
+        .cta-btn {
+            background:#ffa94d;
+            color:#2e1a3b;
+            padding:12px 22px;
+            border-radius:10px;
+            font-weight:700;
+            text-decoration:none;
+            display:inline-block;
+            transition:0.25s;
+        }
+        .cta-btn:hover {
+            background:white;
+            box-shadow:0 0 0 2px #ffa94d inset;
+            color:#2e1a3b;
+        }
+
         @media(max-width:900px){.menu-grid{grid-template-columns:repeat(2,1fr)}}
         @media(max-width:600px){.menu-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
-    <header class="pc-header">
-        <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-            <a class="logo" href="GABIPRAYS.HTML" target="_blank" rel="noopener noreferrer">
-                <img src="logozz.png" alt="logo">
-                <div>
-                    <div class="site-title">GABI FRIES MENU</div>
-                    <div style="font-size:12px;color:rgba(46,26,59,0.6);margin-top:4px">Detailed pricing & flavors</div>
-                </div>
-            </a>
-            <nav>
-                <a href="index.html" >Home</a>
-                <a href="menu.html" >Menu</a>
-                <a href="catering-inquiry.html">Catering</a>
-                <a href="ABOUT US.html" >About us</a>
-                
-            </nav>
+
+<header class="pc-header">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+        <a class="logo" href="GABIPRAYS.HTML" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:10px;">
+            <img src="logozz.png" alt="logo" style="height:50px;">
+            <div>
+                <div class="site-title">GABI FRIES MENU</div>
+                <div style="font-size:12px;color:rgba(46,26,59,0.6);margin-top:4px">Detailed pricing & flavors</div>
+            </div>
+        </a>
+        <nav>
+            <a href="GABIPRAYS.HTML">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="catering-inquiry.html">Catering</a>
+            <a href="ABOUT US.html">About us</a>
+        </nav>
+    </div>
+</header>
+
+<main class="menu-details">
+    <h1 style="color:#7a3ea1;text-align:center;margin-bottom:8px">Full Menu & Prices</h1>
+    <p style="text-align:center;color:rgba(46,26,59,0.7)">Choose your size and flavor. Prices are listed below!!</p>
+
+    <section style="margin-top:20px">
+        <h2 style="color:#7a3ea1;margin-bottom:10px">Sizes</h2>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <div class="size-btn">Small — 20 PHP</div>
+            <div class="size-btn">Medium — 50 PHP</div>
+            <div class="size-btn">Mega — 75 PHP</div>
         </div>
-    </header>
+    </section>
 
-    <main class="menu-details">
-        <h1 style="color:var(--purple-600);text-align:center;margin-bottom:8px">Full Menu & Prices</h1>
-        <p style="text-align:center;color:rgba(46,26,59,0.7)">Choose your size and flavor. Prices are listed below!!</p>
+    <section style="margin-top:20px">
+        <h2 style="color:#7a3ea1;margin-bottom:10px">Flavors</h2>
+        <div class="menu-grid">
 
-        <section style="margin-top:20px">
-            <h2 style="color:var(--purple-600);margin-bottom:10px">Sizes</h2>
-            <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <div style="background:var(--orange-300);padding:10px 14px;border-radius:10px">Small — 20 PHP</div>
-                <div style="background:var(--orange-300);padding:10px 14px;border-radius:10px">Medium — 50 PHP</div>
-                <div style="background:var(--orange-300);padding:10px 14px;border-radius:10px">Mega — 75 PHP</div>
+            <div class="menu-card">
+                <img src="cinnamon.png" style="height:120px;width:120px;border-radius:20px;object-fit:cover;margin:auto;">
+                <h3>Cinnamon Sugar</h3>
+                <p>Sweet and warm cinnamon coating — great as dessert.</p>
+                <div class="price">Add-on: sauces are available</div>
             </div>
-        </section>
 
-        <section style="margin-top:20px">
-            <h2 style="color:var(--purple-600);margin-bottom:10px">Flavors</h2>
-            <div class="menu-grid">
-                <div class="menu-card">
-                   <img src="cinnamon.png" 
-                    alt="Fries" 
-                    style="height: 120px; width: 120px; border-radius: 20px; object-fit: cover; margin: auto; object-position: center;">
-                    <h3>Cinnamon Sugar</h3>
-                    <p>Sweet and warm cinnamon coating — great as dessert.</p>
-                    <div class="price">Add-on: sauces are available</div>
-                </div>
-                <div class="menu-card">
-                    <img src="CHEESE.jpg" 
-                    alt="Fries" 
-                    style="height: 120px; width: 120px; border-radius: 20px; object-fit: cover; margin: auto; object-position: center;">
-                    <h3>Barbeque</h3>
-                    <p>Smoky barbeque dust with a savory finish.</p>
-                    <div class="price">Comes with Roadhouse bbq sauce</div>
-                </div>
-                <div class="menu-card">
-                     <img src="CHEESE.jpg" 
-                    alt="Fries" 
-                    style="height: 120px; width: 120px; border-radius: 20px; object-fit: cover; margin: auto; object-position: center;">
-                    <h3>Cheese</h3>
-                    <p>Generous cheese powder topped with melted cheese.</p>
-                    <div class="price">Comes with side dip of cheesy mayo</div>
-                </div>
-                <div class="menu-card">
-                    <img src="sour cream gabiprays.png" 
-                    alt="Fries" 
-                    style="height: 120px; width: 120px; border-radius: 20px; object-fit: cover; margin: auto; object-position: center;">
-                    <h3>Sour cream and onion</h3>
-                    <p>Buttery garlic goodness — savory and aromatic.</p>
-                    <div class="price">Recommended with sour cream and onion mayo!</div>
-                </div>
-                <div class="menu-card">
-                    <img src="gabifries bbq.jpg" 
-                    alt="Fries" 
-                    style="height: 120px; width: 120px; border-radius: 20px; object-fit: cover; margin: auto; object-position: center;">
-                    <h3>Original</h3>
-                    <p>Original flavor and crispy — classic favorite.</p>
-                    <div class="price">Pairs well with cold drinks</div>
-                </div>
-                <div class="menu-card">
-                    <img src="special mix.png" 
-                    alt="Fries" 
-                    style="height: 120px; width: 120px; border-radius: 20px; object-fit: cover;  object-position: center;">
-                    <h3>Special Mix</h3>
-                    <p>Choose two flavors combined for a unique taste.</p>
-                    <div class="price">+30 PHP for mix</div>
-                </div>
+            <div class="menu-card">
+                <img src="CHEESE.jpg" style="height:120px;width:120px;border-radius:20px;object-fit:cover;margin:auto;">
+                <h3>Barbeque</h3>
+                <p>Smoky barbeque dust with a savory finish.</p>
+                <div class="price">Comes with Roadhouse bbq sauce</div>
             </div>
-        </section>
 
-        <section style="margin-top:26px;text-align:center">
-            <a href="catering-inquiry.html" class="cta-btn" target="_blank" rel="noopener noreferrer">Book Catering</a>
-        </section>
-    </main>
+            <div class="menu-card">
+                <img src="CHEESE.jpg" style="height:120px;width:120px;border-radius:20px;object-fit:cover;margin:auto;">
+                <h3>Cheese</h3>
+                <p>Generous cheese powder topped with melted cheese.</p>
+                <div class="price">Comes with side dip of cheesy mayo</div>
+            </div>
 
-    <footer class="pc-footer">
-        <div class="container"><p>&copy;  Gabi Fries 2025 — All rights reserved.</p></div>
-    </footer>
+            <div class="menu-card">
+                <img src="sourcream.png" style="height:120px;width:120px;border-radius:20px;object-fit:cover;margin:auto;">
+                <h3>Sour cream and onion</h3>
+                <p>Buttery garlic goodness — savory and aromatic.</p>
+                <div class="price">Recommended with sour cream and onion mayo!</div>
+            </div>
+
+            <div class="menu-card">
+                <img src="bbq.jpg" style="height:120px;width:120px;border-radius:20px;object-fit:cover;margin:auto;">
+                <h3>Original</h3>
+                <p>Original flavor and crispy — classic favorite.</p>
+                <div class="price">Pairs well with cold drinks</div>
+            </div>
+
+            <div class="menu-card">
+                <img src="specialmix.png" style="height:120px;width:120px;border-radius:20px;object-fit:cover;margin:auto;">
+                <h3>Special Mix</h3>
+                <p>Choose two flavors combined for a unique taste.</p>
+                <div class="price">+30 PHP for mix</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="margin-top:26px;text-align:center">
+        <a href="catering-inquiry.html" class="cta-btn">Book Catering</a>
+    </section>
+</main>
+
+<footer class="pc-footer">
+    <div class="container"><p>&copy; Gabi Fries 2025 — All rights reserved.</p></div>
+</footer>
+
 </body>
 </html>
-
-
